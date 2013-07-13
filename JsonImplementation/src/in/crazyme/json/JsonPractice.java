@@ -1,6 +1,5 @@
 package in.crazyme.json;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,16 +19,16 @@ public class JsonPractice {
 	}
 	
 	public static void main(String[] args) {
-		new JsonPractice().getIdFromPhoneNumber("1234567");
+		new JsonPractice().getIdFromPhoneNumber("9818139891");
 
 	}
 
-	
+	//For now I am just testing.I am able to parse patient id,name and mobile number given id or phone number
 	public List<String> getIdFromPhoneNumber(String pnumber){
 		List<String> pid=new ArrayList<String>();
 		try{
 		ObjectMapper m = new ObjectMapper();
-		String query="patient?q=9818139891&v=full";
+		String query="patient?q="+pnumber+"&v=full";
 		JsonNode rootNode = m.readTree(ApiAuthRest.getRequestGet(query));
 		JsonNode results = rootNode.get("results");
 		if(!results.isNull()){
@@ -64,12 +63,15 @@ public class JsonPractice {
 		
 	}
 	
+	/*
+	 * Method that will be used for API CAll
+	 */
 	public void registerByNumber(String pnumber){
-
+			numbertoRegister(pnumber);
 	}
 	
 	public void numbertoRegister(String pnumber){
-		
+		//Re
 	}
 }
 	
