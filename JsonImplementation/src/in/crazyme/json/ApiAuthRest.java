@@ -20,7 +20,6 @@ public class ApiAuthRest {
 	 * @param URLPath
 	 * @param input
 	 * @return
-	 * @throws Exception
 	 */
 	public static Boolean getRequestPost(String URLPath, StringEntity input){
         String URL = URLBase + URLPath;
@@ -60,7 +59,6 @@ public class ApiAuthRest {
 	 * HTTP GET
 	 * @param URLPath
 	 * @return
-	 * @throws Exception
 	 */
 	public static String getRequestGet(String URLPath){
         String URL = URLBase + URLPath;
